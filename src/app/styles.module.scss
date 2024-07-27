@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  overflow: hidden;
+  height: auto;
+  min-height: 480px;
+
+  // hide the scrollbar
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,123 @@
+.codePreview {
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+  overflow: auto;
+  height: 100vh;
+  background-color: var(--figma-color-bg-secondary);
+  border-left: 1px solid var(--figma-color-border);
+  overflow-y: scroll;
+
+  pre {
+    overflow: auto;
+    margin: 0;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      display: none;
+    }
+  }
+
+  code {
+    user-select: text;
+  }
+
+  // custom scrollbar
+  &::-webkit-scrollbar {
+    width: 13px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: var(--figma-color-icon-secondary);
+  }
+}
+
+.codePreviewOpen {
+  height: 100vh;
+
+  .settingView {
+    overflow-y: auto;
+  }
+}
+
+.previewToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: fixed;
+  width: 500px;
+  bottom: 20px;
+  right: 0;
+  opacity: 0;
+  transform: translateY(10px);
+
+  animation: previewToolbarFadeIn 0.3s ease-in-out forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes previewToolbarFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toolbarItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 24px;
+  padding: 4px 8px;
+  border-radius: var(--border-radius-6);
+}
+
+.previewToolbarButton {
+  background-color: var(--figma-color-bg-inverse);
+
+  span {
+    color: var(--figma-color-bg);
+  }
+
+  svg {
+    fill: var(--figma-color-bg);
+  }
+}
+
+.successUpdateAnimation {
+  animation: successUpdateAnimation 0.5s 1;
+}
+
+@keyframes successUpdateAnimation {
+  0% {
+    background-color: var(--figma-color-bg-success);
+    transform: scale(0.96);
+  }
+  100% {
+    background-color: var(--figma-color-bg-inverse);
+    transform: scale(1);
+  }
+}
+
+.previewToolbarStat,
+.previewToolbarSecondButton {
+  background-color: var(--figma-color-bg);
+}
+
+.previewToolbarSecondButton {
+  margin-right: 10px;
+}

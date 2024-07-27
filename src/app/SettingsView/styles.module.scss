@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  height: auto;
+  overflow: hidden;
+}
+
+.settingView {
+  width: 300px;
+  min-width: 300px;
+  overflow-y: auto;
+
+  // hide the scrollbar
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.fitHighToFrame {
+  height: 100vh;
+}
+
+.dynamicContent {
+  flex: 1;
+}
+
+.styleNameInput {
+  width: 100%;
+}
+
+.overlayServerList {
+  position: absolute;
+  z-index: var(--z-index-2);
+  width: 130px;
+  bottom: 0;
+  right: 0;
+}
+
+.rowItem {
+  align-items: center;
+}
+
+.rowItemText {
+  flex: 1;
+}
+
+.about {
+  justify-content: space-between;
+
+  a {
+    color: var(--figma-color-text);
+  }
+}
+
+.codeLine {
+  display: inline-block;
+  // font-weight: 500;
+  // font-size: 12px;
+  background-color: var(--figma-color-bg-pressed);
+  outline: 1px solid var(--figma-color-bg-disabled);
+  font-style: italic;
+  padding: 0 4px;
+  margin: 0 2px;
+  border-radius: 3px;
+}
